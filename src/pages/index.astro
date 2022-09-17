@@ -1,11 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
+import clsx from 'clsx'
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <h1>Welcome to <span class="text-gradient text-lg">Astro</span></h1>
+    <h1>
+      Welcome to <span
+        class={clsx([Date.now() > 0 ? 'text-green-500' : 'text-gradient'])}
+        >Astro</span
+      >
+    </h1>
     <p class="instructions">
       Check out the <code>src/pages</code> directory to get started.<br />
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
