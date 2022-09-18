@@ -2,12 +2,11 @@
 import clsx from 'clsx'
 
 export interface Props {
-  value: string
   href?: string
   className?: string
 }
 
-const { value, href, className } = Astro.props
+const { href, className } = Astro.props
 ---
 
 {
@@ -18,13 +17,13 @@ const { value, href, className } = Astro.props
         'px-2 py-0.5 text-white font-semibold rounded-md'
       )}
       href={href}
-    >{value}</a>
+    ><slot /></a>
   ) : (
     <span
       class={clsx(
         className || 'bg-blue-500',
         'px-2 py-0.5 text-white font-semibold rounded-md'
       )}
-    >{value}</span>
+    ><slot /></span>
   )
 }
