@@ -1,0 +1,30 @@
+---
+import clsx from 'clsx'
+
+export interface Props {
+  value: string
+  href?: string
+  className?: string
+}
+
+const { value, href, className } = Astro.props
+---
+
+{
+  href ? (
+    <a
+      class={clsx(
+        className || 'bg-blue-500 hover:bg-blue-400',
+        'px-2 py-0.5 text-white font-semibold rounded-md'
+      )}
+      href={href}
+    >{value}</a>
+  ) : (
+    <span
+      class={clsx(
+        className || 'bg-blue-500',
+        'px-2 py-0.5 text-white font-semibold rounded-md'
+      )}
+    >{value}</span>
+  )
+}

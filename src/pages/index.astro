@@ -1,102 +1,54 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro'
-import clsx from 'clsx'
+import Highlighted from '../components/Highlighted.astro'
+import coverReference from '../img/cover.webp'
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <h1>
-      Welcome to <span
-        class={clsx([Date.now() > 0 ? 'text-green-500' : 'text-gradient'])}
-        >Astro</span
-      >
-    </h1>
-    <p class="instructions">
-      Check out the <code>src/pages</code> directory to get started.<br />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-    </p>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://docs.astro.build/"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
+<Layout title="Michael Lyon">
+  <main
+    class="flex justify-center items-center min-h-screen font-['Inter'] text-gray-300 leading-8"
+  >
+    <article class="animation-section-1 max-w-screen-md mx-auto px-6 my-12">
+      <h1 class="text-white text-3xl font-semibold mb-2">
+        {'Hi, my name is Michael.'}
+      </h1>
+      <p class="mt-0">
+        I'm a
+        <Highlighted value="JavaScript Engineer" className="bg-gray-700" /> working
+        at
+        <Highlighted
+          value="Kinsta"
+          className="bg-[#5333ed] hover:text-[#5333ed] hover:bg-white"
+          href="https://kinsta.com/"
+        />
+      </p>
+
+      <img
+        src={coverReference}
+        alt="Michael in his element"
+        class="animation-section-2 saturate-50"
+        width={800}
+        height={533}
       />
-      <Card
-        href="https://astro.build/integrations/"
-        title="Integrations"
-        body="Supercharge your project with new frameworks and libraries."
-      />
-      <Card
-        href="https://astro.build/themes/"
-        title="Themes"
-        body="Explore a galaxy of community-built starter themes."
-      />
-      <Card
-        href="https://astro.build/chat/"
-        title="Chat"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-    </ul>
+      <p class="animation-section-3">
+        I've built products ranging from{' '}
+        <a
+          href="https://www.prnewswire.com/news-releases/electronic-caregiver-releases-addi-2-0--a-highly-intelligent-and-engaging-platform-designed-to-deliver-value-based-care-built-on-aws-addi-provides-100x-scalability-to-meet-the-surging-demand-for-telehealth-301385791.html"
+        >
+          remote patient monitoring
+        </a>{' '}
+        to{' '}
+        <a
+          href="https://www.krqe.com/health/coronavirus-new-mexico/new-mexico-company-creates-app-to-track-risks-in-covid-19-hotspots/"
+        >
+          COVID tracking for professional athletes</a
+        >. I'm currently a member of the{' '}
+        <a href="https://kinsta.com/mykinsta/">MyKinsta</a> core team.
+      </p>
+
+      <p class="animation-section-4">
+        My goal is to make the world a better place through software.
+      </p>
+    </article>
   </main>
 </Layout>
-
-<style>
-  :root {
-    --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-  }
-
-  h1 {
-    margin: 2rem 0;
-  }
-
-  main {
-    margin: auto;
-    padding: 1em;
-    max-width: 60ch;
-  }
-
-  .text-gradient {
-    font-weight: 900;
-    background-image: var(--astro-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 100% 200%;
-    background-position-y: 100%;
-    border-radius: 0.4rem;
-    animation: pulse 4s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%,
-    100% {
-      background-position-y: 0%;
-    }
-    50% {
-      background-position-y: 80%;
-    }
-  }
-
-  .instructions {
-    line-height: 1.6;
-    margin: 1rem 0;
-    background: #4f39fa;
-    padding: 1rem;
-    border-radius: 0.4rem;
-    color: var(--color-bg);
-  }
-
-  .instructions code {
-    font-size: 0.875em;
-    border: 0.1em solid var(--color-border);
-    border-radius: 4px;
-    padding: 0.15em 0.25em;
-  }
-
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
-  }
-</style>
