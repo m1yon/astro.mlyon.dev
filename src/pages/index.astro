@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Highlighted from '../components/Highlighted.astro'
 import coverReference from '../img/cover.webp'
+import { Image } from 'astro:assets'
 ---
 
 <Layout title="Michael Lyon">
@@ -15,14 +16,16 @@ import coverReference from '../img/cover.webp'
       <p class="mt-0">
         I'm a
         <Highlighted className="bg-gray-700">JavaScript Engineer</Highlighted>
-        working at
+         working at
         <Highlighted
           className="bg-[#5333ed] hover:text-[#5333ed] hover:bg-white"
-          href="https://kinsta.com/">Kinsta</Highlighted
+          href="https://kinsta.com/"
         >
+          Kinsta
+        </Highlighted>
       </p>
 
-      <img
+      <Image
         src={coverReference}
         alt="Michael in his element"
         class="animation-section-2 saturate-50"
@@ -36,7 +39,7 @@ import coverReference from '../img/cover.webp'
         >
           remote patient monitoring
         </a>{' '}
-        to{' '}
+         to{' '}
         <a
           href="https://www.krqe.com/health/coronavirus-new-mexico/new-mexico-company-creates-app-to-track-risks-in-covid-19-hotspots/"
         >
